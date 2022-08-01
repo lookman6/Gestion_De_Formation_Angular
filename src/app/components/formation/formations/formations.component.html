@@ -1,0 +1,57 @@
+<div class="container">
+    <p>
+     <a href="" title="ajouter une formation" routerLink="/formationsAdd">Ajouter une formation</a>
+     </p>
+ 
+    <!-- @if (Session::has('warning') || Session::has('success'))
+     {{$classe = ""}} {{ route('formations.create') }}-->
+    <!-- @if(Session::has('warning') ? $classe = "warning" : $classe = "success")@endif-->
+         <!--<div class="alert alert-{{$classe}}">
+             {{Session::get($classe)}}
+         </div>-->
+    <!-- @endif	
+     @isset($formations)
+     {{-- dd($formations); --}}-->
+         <div class="container">
+             <div class="card">
+                 <div class="card-body">
+                     <h5 class="card-title">Liste des formations</h5>
+                     <table class="table" >
+         <thead>
+             <tr>
+                 <th>thème</th>
+                 <th>catégorie</th>
+                 <th colspan="2" >options</th>
+             </tr>
+         </thead>
+         <tbody>
+             <!-- @foreach ($formations as $formation)-->
+             <div *ngFor="let formation of formations">
+             <tr>
+                 <td>
+                     <a href="" title="voir plus d'informations" >{{formation.theme}}<!-- {{ $formation->intitule }}--></a>
+                 </td>
+                 <td>{{formation.categorie_id}} <!--{{-- $formation->categorie_id --}}{{ $formation->categorie->intitule }}--></td>
+                 <td>
+                     <a href="" title="Modifier les informations d'une formation" >Modifier </a>
+                 </td>
+                 <td>
+                     <form method="POST" action="" >
+                         <!-- CSRF token {{ route('formations.destroy', $formation) }} {{ route('formations.edit',$formation) }}-->
+                        <!-- @csrf {{ route('formations.show', $formation) }}-->
+                         <!-- <input type="hidden" name="_method" value="DELETE"> -->
+                        <!-- @method("DELETE")-->
+                         <input class="btn btn-danger" onClick="return confirm('Etes-vous sûr de vouloir supprimer')" type="submit" value="x Supprimer" >
+                     </form>
+                 </td>
+             </tr>
+             </div>
+            <!-- @endforeach-->
+         </tbody>
+     </table>
+                 </div>
+             </div>
+         </div>
+ 
+    </div>
+     <!--@endisset-->

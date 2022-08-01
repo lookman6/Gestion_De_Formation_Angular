@@ -1,0 +1,62 @@
+<div class="pagetitle">
+	<h1>Liste du personnel</h1>
+	<nav>
+	  <ol class="breadcrumb">
+		<li class="breadcrumb-item"><a href="{{url('index')}}">Accueil</a></li>
+		<li class="breadcrumb-item">Personnels</li>
+		<li class="breadcrumb-item active">Liste</li>
+	  </ol>
+	</nav>
+  </div>
+
+	<p>
+		<a href="" title="ajouter un personnel" ><button type="button" class="btn btn-primary" routerLink="/personnelsAdd">Ajouter un personnel</button></a>
+	</p>
+
+	<!--{{ route('personnels.create') }} @if (Session::has('warning') || Session::has('success'))
+	{{$classe = ""}}
+	@if(Session::has('warning') ? $classe = "warning" : $classe = "success")@endif
+		<div class="alert alert-{{$classe}}">
+			{{Session::get($classe)}}
+		</div>
+	@endif	-->
+
+	<div class="container ">
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">Liste du personnel</h4>		
+	<table class="table" >
+		<thead>
+			<tr>
+				<th scope="col">Nom</th>
+				<th scope="col">Prénom</th>
+				<th scope="col">options</th>
+			</tr>
+		</thead>
+		<tbody><!---->
+			<!--{{-- dd($personnels); --}}-->
+			<!--@foreach ($personnels as $personnel)-->
+			<div *ngFor="let personnel of personnels">
+			<tr>
+				<td>{{personnel.name}}<!--{{ $personnel->user->lastname }}--></td>
+				<td>{{personnel.prenom}}<!--{{ $personnel->user->firstname}}--></td>
+			<td>
+				<a href="" title="voir plus dinformations" ><button type="button" class="btn btn-light btn-sm" title="View"><i class="bi bi-eye"></i></button></a>
+				<a href="" title="Modifier les informations d'un personnel" ><button type="button" class="btn btn-info btn-sm" title="modifier"><i class="bi bi-pencil-square"></i></button></a>
+					<form method="POST" action="" >
+						<!-- CSRF token {{ route('personnels.show', $personnel) }} {{ route('personnels.edit', $personnel) }} {{ route('personnels.destroy', $personnel) }}-->
+						<!--@csrf-->
+						<!-- <input type="hidden" name="_method" value="DELETE"> -->
+						<!--@method("DELETE")-->
+						<button type="submit" class="btn btn-danger btn-sm js-sweetalert" title="Delete" data-type="confirm" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="bi bi-trash"></i></button>
+						<!--{{-- <input class="btn btn-danger" onClick="return confirm('Etes-vous sûr de vouloir supprimer')" type="submit" value="x Supprimer" > --}}-->
+					</form>
+				</td>
+			</tr>
+			</div>
+			<!--@endforeach-->
+		</tbody>
+	</table>
+	</div>
+	</div>
+	</div>
