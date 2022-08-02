@@ -2,8 +2,8 @@
 	<h1>Liste du personnel</h1>
 	<nav>
 	  <ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="{{url('index')}}">Accueil</a></li>
-		<li class="breadcrumb-item">Personnels</li>
+		<li class="breadcrumb-item"> <a>Accueil</a></li>
+		<li class="breadcrumb-item">Personnels</li><!--href="{{url('index')}}"-->
 		<li class="breadcrumb-item active">Liste</li>
 	  </ol>
 	</nav>
@@ -48,7 +48,7 @@
 						<!--@csrf-->
 						<!-- <input type="hidden" name="_method" value="DELETE"> -->
 						<!--@method("DELETE")-->
-						<button type="submit" class="btn btn-danger btn-sm js-sweetalert" title="Delete" data-type="confirm" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="bi bi-trash"></i></button>
+						<button type="submit" class="btn btn-danger btn-sm js-sweetalert" title="Delete" data-type="confirm" ><i class="bi bi-trash"></i></button><!--onclick="return confirm(&quot;Confirm delete?&quot;)"-->
 						<!--{{-- <input class="btn btn-danger" onClick="return confirm('Etes-vous sûr de vouloir supprimer')" type="submit" value="x Supprimer" > --}}-->
 					</form>
 				</td>

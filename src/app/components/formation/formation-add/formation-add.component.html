@@ -14,15 +14,15 @@
       <div class="form-group">
           <label>selectionnez la catégorie (domaine)</label>
           <select id="categorie" required="" name="categorie" class="form-control">
-        @isset($categories)
+       <!-- @isset($categories)-->
         <!-- @foreach ($categories as $categorie )-->
-        <div *ngFor="let categorie of categories">
-            <option >{{categorie.intitule}}</option>
+        <div ><!--*ngFor="let categorie of categories"-->
+            <option ><!--{{categorie.intitule}}--></option>
         </div>
         <!--@endforeach-->
         </select>
        </div>
-       @endisset
+       <!--@endisset-->
     
       <button type="submit" class="btn btn-dark">créer</button>
     </form>

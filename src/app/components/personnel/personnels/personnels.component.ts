@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { Personnels } from 'src/app/models/personnels';
 import { PersonnelService } from 'src/app/services/personnel.service';
 
 @Component({
-  selector: 'app-personnels',
+  selector: '.app-personnels',
   templateUrl: './personnels.component.html',
   styleUrls: ['./personnels.component.scss']
 })
 export class PersonnelsComponent implements OnInit {
   personnels:any;
-  personnel = new Personnel();
+  personnel = new Personnels();
 
   constructor(private personnelService:PersonnelService) { }
 
