@@ -41,61 +41,10 @@ import { SalleAddComponent } from './components/salle/salle-add/salle-add.compon
 import { SeanceAddComponent } from './components/seance/seance-add/seance-add.component';
 import { CabinetAddComponent } from './components/cabinet/cabinet-add/cabinet-add.component';
 import { FormsModule } from '@angular/forms';
+import {AppRoutingModule} from "./app-routing.module";
 
 
-const appRoutes: Routes = [
-  {path: '', component:WelcomeComponent},
-  {path: '/home', component:WelcomeComponent},
 
-  // routes for categories
-  {path: '/categories', component:CategoriesComponent},
-  {path: '/categoriesEdit', component:CategorieEditComponent},
-  {path: '/categoriesAdd', component:CategorieAddComponent},
-
-  // routes for formation
-  {path: '/formations', component:FormationsComponent},
-  {path: '/formationsEdit', component:FormationEditComponent},
-  {path: '/formationsAdd', component:FormationAddComponent},
-
-  // routes for formateur
-  {path: '/formateurs', component:FormateursComponent},
-  {path: '/formateursEdit', component:FormateurEditComponent},
-  {path: '/formateursAdd', component:FormateurAddComponent},
-
-  // routes for personnel
-  {path: '/personnels', component:PersonnelsComponent},
-  {path: '/personnelsEdit', component:PersonnelEditComponent},
-  {path: '/personnelsAdd', component:PersonnelAddComponent},
-
-
-  // routes for cabinet
-  {path: '/cabinets', component:CabinetsComponent},
-  {path: '/cabinetsEdit', component:CabinetEditComponent},
-  {path: '/cabinetsAdd', component:CabinetEditComponent},
-
-  // routes for seance
-  {path: '/seances', component:SeancesComponent},
-  {path: '/seancesAdd', component:SeanceAddComponent},
-  {path: '/seancesEdit', component:SeanceEditComponent},
-
-
-  // routes for statistique
-  {path: '/statistiques', component:StatistiquesComponent},
-  
-  
-  
-  // routes for groupe
-  {path: '/groupesAdd', component:GroupeAddComponent},
-  {path: '/groupes', component:GroupesComponent},
-  {path: '/groupesEdit', component:GroupeEditComponent},
-
-
-  //roues for salle
-  {path: '/salles', component:SallesComponent},
-  {path: '/sallesAdd', component:SalleAddComponent},
-  {path: '/sallesEdit', component:SalleEditComponent}
-  
-];
 
 @NgModule({
   declarations: [
@@ -140,7 +89,7 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

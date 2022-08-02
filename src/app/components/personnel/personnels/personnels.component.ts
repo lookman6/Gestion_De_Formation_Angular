@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonnelService } from 'src/app/services/personnel.service';
+import {Personnels} from "../../../models/personnels";
 
 @Component({
   selector: 'app-personnels',
@@ -8,7 +9,7 @@ import { PersonnelService } from 'src/app/services/personnel.service';
 })
 export class PersonnelsComponent implements OnInit {
   personnels:any;
-  personnel = new Personnel();
+  personnel = Personnels;
 
   constructor(private personnelService:PersonnelService) { }
 
