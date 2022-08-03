@@ -22,4 +22,11 @@ export class GroupesComponent implements OnInit {
     });
   }
 
+  deleteGroupe(id:BigInt)
+  {
+    this.groupeService.delete(id).subscribe(res => {
+      this.getGroupeData();
+    })
+  }
+
 }

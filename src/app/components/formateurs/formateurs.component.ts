@@ -22,4 +22,11 @@ export class FormateursComponent implements OnInit {
     });
   }
 
+  deleteFormateur(id:BigInt)
+  {
+    this.formateurService.delete(id).subscribe(res => {
+      this.getFormateurData();
+    })
+  }
+
 }

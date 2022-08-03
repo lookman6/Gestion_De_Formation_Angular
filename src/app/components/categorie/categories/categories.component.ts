@@ -21,6 +21,13 @@ categories:any;
       this.categories = res;
     });
   }
+
+  deleteCategorie(id:BigInt)
+  {
+    this.categorieService.delete(id).subscribe(res => {
+      this.getCategoriesData();
+    })
+  }
   
 
 }

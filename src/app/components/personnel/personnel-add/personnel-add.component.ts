@@ -11,7 +11,7 @@ import { PersonnelService } from 'src/app/services/personnel.service';
 export class PersonnelAddComponent implements OnInit {
   
   personnels:any;
-  perso = new Personnels();
+  personnel = new Personnels();
   constructor(private personnelService:PersonnelService) { }
 
   ngOnInit(): void {
@@ -27,9 +27,10 @@ export class PersonnelAddComponent implements OnInit {
 
   insertData()
   {
-    this.personnelService.insert(this.perso).subscribe(res => {
+    this.personnelService.insert(this.personnel).subscribe(res => {
       this.getPersonneldata();
-    })
+    });
+    /*console.log(this.personnel);*/
   }
 
 }

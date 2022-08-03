@@ -21,4 +21,13 @@ export class SeancesComponent implements OnInit {
       this.seances = res;
     });
   }
+
+  deleteSeance(id:BigInt)
+  {
+    this.seanceService.delete(id).subscribe(res => {
+      this.getSeanceData();
+    })
+  }
+  
+  
 }

@@ -24,4 +24,11 @@ export class PersonnelsComponent implements OnInit {
     });
   }
 
+  deletePersonnel(id:BigInt)
+  {
+    this.personnelService.delete(id).subscribe(res => {
+      this.getPersonneldata();
+    })
+  }
+
 }

@@ -22,4 +22,11 @@ export class FormationsComponent implements OnInit {
     });
   }
 
+   deleteFormation(id:BigInt)
+  {
+    this.formationService.delete(id).subscribe(res => {
+      this.getFormationData();
+    })
+  }
+
 }

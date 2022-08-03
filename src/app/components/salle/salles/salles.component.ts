@@ -22,4 +22,11 @@ export class SallesComponent implements OnInit {
     });
   }
 
+  deleteSalle(id:BigInt)
+  {
+    this.salleService.delete(id).subscribe(res => {
+      this.getSalleData();
+    })
+  }
+
 }

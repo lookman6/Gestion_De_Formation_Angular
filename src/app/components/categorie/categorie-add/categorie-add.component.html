@@ -1,9 +1,9 @@
 <div class="container">
-    <form action="" method="POST" (ngSubmit)="insertData()">
+    <form  (ngSubmit)="insertData()">
      <!--@csrf   {{route('cabinets.store')}} --> 
       <div class="form-group" >
         <label for="nom">Intitulé</label>
-        <input type="text" class="form-control" id="nom" name="intitule" [(ngModel)]="categorie.intitule" placeholder="Entrez le nom">
+        <input type="text" class="form-control" id="nom" name="intitule" [(ngModel)]="categorie.intitule" placeholder="nom">
       </div>
       <!--<div class="form-group" >
         <label for="adresse">adresse</label>

@@ -18,4 +18,9 @@ export class CabinetService {
   {
     return this.httpClient.post("http://127.0.0.1:8000/cabinet",donnees);
   }
+
+  delete(id:BigInt)
+  {
+    return this.httpClient.delete("http://127.0.0.1:8000/cabinetDelete/"+id);
+  }
 }
