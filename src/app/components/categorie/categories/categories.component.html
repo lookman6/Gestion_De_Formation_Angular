@@ -1,0 +1,55 @@
+<p>
+    <!--<a href="" title="ajouter une catégorie" routerLink="/categoriesAdd">--><button type="button" class="btn btn-primary" routerLink="/categoriesAdd">Ajouter une catégorie</button><!--</a>-->
+</p>
+<div class="container">
+
+<!--{{ route('categories.create') }}@if (Session::has('warning') || Session::has('success'))
+{{$classe = ""}}
+@if(Session::has('warning') ? $classe = "warning" : $classe = "success")@endif
+    <div class="alert alert-{{$classe}}">
+        {{Session::get($classe)}}
+    </div>
+@endif	
+@isset($categories)-->
+
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Liste des catégories</h4>
+<table class="table" >
+    <thead>
+        <tr>
+            <th>intitule</th>
+            <th colspan="2" >options</th>
+        </tr>
+    </thead>
+    <tbody>
+       <!-- @foreach ($categories as $categorie)-->
+       <div *ngFor="let categorie for categories">
+        <tr>
+            <td>
+                <a href="" title="voir plus d'informations" >{{categorie.intitule}}<!--{{ $categorie->intitule }}--></a>
+            </td>
+            <td>
+                <a href="" title="Modifier les informations d'une catégorie" >Modifier</a>
+            </td>
+            <td>
+                <form method="POST" action="" >
+                    <!-- CSRF token {{ route('categories.destroy', $categorie) }}{{ route('categories.edit',$categorie) }}-->
+                    <!--@csrf-->
+                    <!-- <input type="hidden" name="_method" value="DELETE"> {{ route('categories.show', $categorie) }}-->
+                    <!--@method("DELETE")-->
+                    <input class="btn btn-danger" onClick="return confirm('Etes-vous sûr de vouloir supprimer')" type="submit" value="x Supprimer" >
+                </form>
+            </td>
+        </tr>
+    </div>
+        <!--@endforeach-->
+    </tbody>
+</table>
+    </div>
+</div>
+
+
+</div>
+<!--@endisset-->

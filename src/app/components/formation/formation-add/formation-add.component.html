@@ -1,0 +1,29 @@
+<div class="container">
+    <form  (ngSubmit)="insertData()">
+    <!--  @csrf   {{route('formations.store')}} -->
+      <div class="form-group" >
+        <label for="intitule">thème</label>
+        <input type="text" class="form-control" id="intitule" name="intitule" [(ngModel)]="formation.intitule"  placeholder="thème">
+      </div>
+    
+      <div class="form-group" >
+        <label for="code">code</label>
+        <input type="text" class="form-control" id="code" name="code" [(ngModel)]="formation.code"  placeholder="code">
+      </div>
+    
+      <div class="form-group">
+          <label>selectionnez la catégorie (domaine)</label>
+          <select id="categorie" required="" name="categorie" class="form-control">
+       <!-- @isset($categories)-->
+        <!-- @foreach ($categories as $categorie )-->
+        <div ><!--*ngFor="let categorie of categories"-->
+            <option ><!--{{categorie.intitule}}--></option>
+        </div>
+        <!--@endforeach-->
+        </select>
+       </div>
+       <!--@endisset-->
+    
+      <button type="submit" class="btn btn-dark">créer</button>
+    </form>
+    </div>

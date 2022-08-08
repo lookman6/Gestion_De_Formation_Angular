@@ -1,0 +1,10 @@
+
+<app-header *ngIf="authService.isAuthenticated()"></app-header>
+<app-sidebar *ngIf="authService.isAuthenticated()"></app-sidebar>
+<main id="main" class="main">
+<router-outlet></router-outlet>
+</main>
+<app-footer *ngIf="authService.isAuthenticated()"></app-footer>
+<app-footer-scripts *ngIf="authService.isAuthenticated()"></app-footer-scripts>
+
+<!--<h1>Hello world !</h1>-->

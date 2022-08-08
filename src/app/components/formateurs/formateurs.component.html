@@ -1,0 +1,98 @@
+<p>
+    <!--<a href="" title="ajouter une formateur" routerLink="/formateurAdd">--><button type="button" class="btn btn-primary" routerLink="/formateurAdd">Ajouter un formateur</button><!--</a>-->
+    </p>
+
+	<!-- {{ route('formateurs.create') }} -@if (Session::has('warning') || Session::has('success'))
+	{{$classe = ""}}
+	@if(Session::has('warning') ? $classe = "warning" : $classe = "success")@endif
+		<div class="alert alert-{{$classe}}">
+			{{Session::get($classe)}}
+		</div>
+	@endif	
+    @isset($formateurs)-->
+	
+	<div class="container">
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Formateurs externes</h5>
+			<table class="table" >
+		<thead>
+			<tr>
+				<th>nom</th>
+				<th>prénom</th>
+				<th colspan="2" >options</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!--@foreach ($formateurs as $formateur)-->
+			<div *ngFor="let formateur of formateurs">
+			<tr>
+				<td>
+					<a href="" title="voir plus d'informateurs" >{{formateur.nom}}<!-- {{ $formateur->name }} --></a>
+				</td>
+                <td>{{formateur.prenom}}<!-- {{$formateur->prenom}} --></td>
+				<td>
+					<a href="" title="Modifier les informateurs d'un formateur" >Modifier </a>
+				</td>
+				<td>
+					<form method="POST" action="" >
+						<!-- CSRF token {{ route('formateurs.destroy', $formateur) }} {{ route('formateurs.edit',$formateur) }} {{ route('formateurs.show', $formateur) }}-->
+						<!--@csrf-->
+						<!-- <input type="hidden" name="_method" value="DELETE"> -->
+						<!--@method("DELETE")-->
+						<input class="btn btn-danger" onClick="return confirm('Etes-vous sûr de vouloir supprimer')" type="submit" value="x Supprimer" >
+					</form>
+				</td>
+			</tr>
+		</div>
+			<!--@endforeach-->
+		</tbody>
+	</table>
+   <!-- @endisset-->
+			</div>
+		</div>
+	</div>
+	<hr>
+
+    <div class="container">
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Formateurs internes</h5>
+				<!--@isset($formateursInternes)-->
+			<table class="table" >
+				<thead>
+					<tr>
+						<th>nom</th>
+						<th>prénom</th>
+						<th colspan="2" >options</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!--@foreach ($formateursInternes as $formateur)-->
+					<div *ngFor="let formateur of formateurs">
+					<tr>
+						<td>
+							{{formateur.nom}}<!--{{ $formateur->name }}-->
+						</td>
+						<td>{{formateur.prenom}}<!--{{$formateur->email}}--></td>
+						<td>
+							<a href="" title="Modifier les informateurs d'un formateur" >Modifier </a>
+						</td>
+				<td>
+					<form method="POST" action="" >
+						<!-- CSRF token {{ route('formateurs.destroy', $formateur) }}-->
+						<!--@csrf {{ route('formateurs.edit',$formateur) }}-->
+						<!-- <input type="hidden" name="_method" value="DELETE"> -->
+						<!--@method("DELETE")-->
+						<input class="btn btn-danger" onClick="return confirm('Etes-vous sûr de vouloir supprimer')" type="submit" value="x Supprimer" >
+					</form>
+				</td>
+					</tr>
+					<!--@endforeach-->
+				</div>
+				</tbody>
+			</table>
+			</div>
+		</div>
+    </div>
+    <!--@endisset-->
